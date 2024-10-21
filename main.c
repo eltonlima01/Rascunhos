@@ -13,7 +13,7 @@ void inserirusuario(usuario **topo, char s1[], char s2[], char s3[], char s4[]);
 void liberarlista(usuario *topo);
 
 int main(){
-    setlocale(LC_ALL,"");
+    setlocale(LC_ALL,"portuguese");
     FILE *file0; //Ponteiro de arquivos do texto de usuários;
     file0=fopen("usuarios.txt", "r");
 
