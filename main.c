@@ -32,6 +32,7 @@ int main(){
 
 void exibirlista(usuario *topo){
     usuario *atual=topo;
+    
     while(atual!=NULL){
         printf("Nome: %s / Usuário: %s / E-mail: %s / Senha: %s\n",
         (*atual).unome, (*atual).uuser, (*atual).uemail, (*atual).usenha);
@@ -40,8 +41,8 @@ void exibirlista(usuario *topo){
 }
 
 void liberarlista(usuario *topo){
-    usuario *atual=topo;
-    usuario *tmprr;
+    usuario *atual=topo, *tmprr;
+    
     while(atual!=NULL){
         tmprr=atual;
         atual=(*atual).proximo;
@@ -51,19 +52,21 @@ void liberarlista(usuario *topo){
 
 usuario* criarusuario(char s1[], char s2[], char s3[], char s4[]){
     usuario *u=(usuario*)malloc(sizeof(usuario));
+    
     if(u==NULL){
         perror("[ERRO]");
         return NULL;
-    }else{
-        strcpy((*u).unome, s1); strcpy((*u).uuser, s2);
-        strcpy((*u).uemail, s3); strcpy((*u).usenha, s4);
-        (*u).proximo=NULL;
-        return u;
     }
+    
+    strcpy((*u).unome, s1); strcpy((*u).uuser, s2);
+    strcpy((*u).uemail, s3); strcpy((*u).usenha, s4);
+    (*u).proximo=NULL;
+    return u;
 }
 
 void inserirusuario(usuario **topo, char s1[], char s2[], char s3[], char s4[]){
     usuario *novousuario=criarusuario(s1, s2, s3, s4);
+    
     if(novousuario!=NULL){
         (*novousuario).proximo=*topo;
         *topo=novousuario;
