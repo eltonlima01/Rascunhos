@@ -52,11 +52,6 @@ void liberarlista(usuario *topo){
 usuario* criarusuario(char s1[], char s2[], char s3[], char s4[]){
     usuario *u=(usuario*)malloc(sizeof(usuario));
     
-    if(u==NULL){
-        perror("[ERRO]");
-        return NULL;
-    }
-    
     strcpy((*u).unome, s1); strcpy((*u).uuser, s2);
     strcpy((*u).uemail, s3); strcpy((*u).usenha, s4);
     (*u).proximo=NULL;
