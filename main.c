@@ -14,19 +14,19 @@ void liberarlista(usuario *topo);
 
 int main(){
     setlocale(LC_ALL, "portuguese");
-    FILE *file0; //Ponteiro de arquivos do texto de usuários;
-    file0=fopen("usuarios.txt", "r");
+    FILE *file; //Ponteiro de arquivos do texto de usuários;
+    file=fopen("usuarios.txt", "r");
 
     usuario *topo=NULL;
     char nome[50], user[50], email[50], senha[50];
 
-    while(fscanf(file0, "%[^\n.]. %s %s %s\n", nome, user, email, senha)!=EOF){
+    while(fscanf(file, "%[^\n.]. %s %s %s\n", nome, user, email, senha)!=EOF){
         inserirusuario(&topo, nome, user, email, senha);
     }
     puts("[LISTA DE USUÁRIOS]");
     exibirlista(topo);
     liberarlista(topo);
-    fclose(file0);
+    fclose(file);
     return 0;
 }
 
