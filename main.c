@@ -14,8 +14,7 @@ void liberarlista(usuario *topo);
 
 int main(){
     setlocale(LC_ALL, "portuguese");
-    FILE *file; //Ponteiro de arquivos do texto de usuários;
-    file=fopen("usuarios.txt", "r");
+    FILE *file=fopen("usuarios.txt", "r");
 
     usuario *topo=NULL;
     char nome[50], user[50], email[50], senha[50];
