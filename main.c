@@ -14,8 +14,8 @@ void liberarlista(usuario *topo);
 
 int main(){
     setlocale(LC_ALL,"");
-    FILE *file0; //Ponteiro de arquivos do texto de usu·rios;
-    file0=fopen("C:\\Users\\01\\Documents\\Projetos\\AED-UNIII\\usuarios.txt","a+");
+    FILE *file0; //Ponteiro de arquivos do texto de usu√°rios;
+    file0=fopen("usuarios.txt","a+");
 
     usuario *topo=NULL;
     char nome[50], user[50], email[50], senha[50];
@@ -23,7 +23,7 @@ int main(){
     while(fscanf(file0, "%[^\n.]. %s %s %s\n", nome, user, email, senha)!=EOF){
         inserirusuario(&topo, nome, user, email, senha);
     }
-    puts("[LISTA DE USU¡RIOS]");
+    puts("[LISTA DE USU√ÅRIOS]");
     exibirlista(topo);
     liberarlista(topo);
     fclose(file0);
@@ -33,7 +33,7 @@ int main(){
 void exibirlista(usuario *topo){
     usuario *atual=topo;
     while(atual!=NULL){
-        printf("Nome: %s / Usu·rio: %s / E-mail: %s / Senha: %s\n",
+        printf("Nome: %s / Usu√°rio: %s / E-mail: %s / Senha: %s\n",
         (*atual).unome, (*atual).uuser, (*atual).uemail, (*atual).usenha);
         atual=(*atual).proximo;
     }
