@@ -22,8 +22,10 @@ int main(){
     while(fscanf(file, "%[^\n.]. %s %s %s\n", nome, user, email, senha)!=EOF){
         inserirusuario(&topo, nome, user, email, senha);
     }
+    
     puts("[LISTA DE USUÁRIOS]");
     exibirlista(topo);
+    
     liberarlista(topo);
     fclose(file);
     return 0;
@@ -55,6 +57,7 @@ usuario* criarusuario(char s1[], char s2[], char s3[], char s4[]){
     strcpy((*u).unome, s1); strcpy((*u).uuser, s2);
     strcpy((*u).uemail, s3); strcpy((*u).usenha, s4);
     (*u).proximo=NULL;
+    
     return u;
 }
 
