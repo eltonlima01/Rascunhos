@@ -1,33 +1,25 @@
-# Compile of circuito0.sv was successful.
-vsim -gui work.circuito0
-# vsim -gui work.circuito0 
-# Start time: 16:42:34 on Oct 26,2024
+# Compile of circuito1.sv was successful.
+# Load canceled
+# Compile of circuito1.sv was successful.
+vsim -gui work.circuito1
+# vsim -gui work.circuito1 
+# Start time: 17:34:39 on Oct 26,2024
 # Loading sv_std.std
-# Loading work.circuito0
-add wave -position end  sim:/circuito0/x
-add wave -position end  sim:/circuito0/y
-add wave -position end  sim:/circuito0/z
-add wave -position end  sim:/circuito0/f1
-add wave -position end  sim:/circuito0/f2
-force -freeze sim:/circuito0/x 0 0
-force -freeze sim:/circuito0/y 0 0
-force -freeze sim:/circuito0/z 0 0
+# Loading work.circuito1
+add wave -position end  sim:/circuito1/x
+add wave -position end  sim:/circuito1/y
+add wave -position end  sim:/circuito1/z
+add wave -position end  sim:/circuito1/f1
+add wave -position end  sim:/circuito1/f2
+force -freeze sim:/circuito1/z 0 0, 1 {50 ps} -r 100
+force -freeze sim:/circuito1/z 0 0, 1 {50 ps} -r 100
+force -freeze sim:/circuito1/y 0 0, 1 {100 ps} -r 200
+force -freeze sim:/circuito1/x 0 0, 1 {200 ps} -r 400
 run
-force -freeze sim:/circuito0/z 1 0
 run
-force -freeze sim:/circuito0/y 1 0
-force -freeze sim:/circuito0/z 0 0
 run
-force -freeze sim:/circuito0/z 1 0
 run
-force -freeze sim:/circuito0/x 1 0
-force -freeze sim:/circuito0/y 0 0
-force -freeze sim:/circuito0/z 0 0
-run
-force -freeze sim:/circuito0/z 1 0
-run
-force -freeze sim:/circuito0/y 1 0
-force -freeze sim:/circuito0/z 0 0
-run
-force -freeze sim:/circuito0/z 1 0
-run
+quit -sim
+# End time: 18:40:30 on Oct 26,2024, Elapsed time: 1:05:51
+# Errors: 0, Warnings: 6
+quit
